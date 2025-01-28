@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Games Shop{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        {% block header %}
+        <h1><b>Главная страница</b></h1>
+        {% endblock %}
+    </header>
+    <menu>
+        {% block menu %}
+        <ul>
+            <li><a href="/platform">Главная</a></li>
+            <li><a href="/shop">Магазин</a></li>
+            <li><a href="/basket">Корзина</a></li>
+        </ul>
+        {% endblock %}
+    </menu>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p># 2025, GameShop in 1998</p>
+    </footer>
+</body>
+</html>

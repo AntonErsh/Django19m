@@ -14,10 +14,15 @@
 {% block content %}
 <ul>
     {% for game in games %}
-        <li> {{ game.title }} | {{ game.description }}. Стоимость: {{ game.cost }} <button>Купить</button></li>
+        <li>
+            <strong> {{ game.title }} </strong>| {{ game.description }}. Стоимость: {{ game.cost }}
+            <button>Купить</button>
+            <br>
+            <img src="/static/images/{{ game.title }}.jpg" height="240" width="320">
+        </li>
     {% endfor %}
 </ul>
-<form action="/platform" method="get">
+<form action="/platform" method="get" style="text-align: center">
     <button> Вернуться обратно </button>
 </form>
 {% endblock %}

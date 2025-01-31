@@ -1,0 +1,37 @@
+{% extends 'task1/menu.html' %}
+
+{% block title %}NEWS{% endblock %}
+
+{% block header %}
+<h1><b>NEWS</b></h1>
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for page in page_object %}
+        <li>
+            <strong>{{ page.title }}</strong>
+            <br>
+            {{ page.content }}
+            <br>
+            {{ page.date }}
+        </li>
+    {% empty %}
+        <h3>Сегодня без новостей</h3>
+    {% endfor %}
+</ul>
+<div class="paggination">
+    <p>Страницы:</p>
+    <ul>
+        {% if page_object.has_previous %}
+            <li><a href="?page=1"><<</a></li>
+            <li><a href="?page={{ page_object.previous_page_number }}">Предыдущая</a></li>
+        {% endif %}
+        <li>{{ page_object.number }}/{{ page_object.num_pages }}</li>
+        {% if page_object.has_next %}
+            <li><a href="?page={{ page_object.next_page_number }}">Следующая</a></li>
+            <li><a href="?page={{ paginator.num_pages }}">>></a></li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

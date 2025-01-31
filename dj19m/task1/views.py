@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import RegistrationForm, is_valid_data
 from .models import *
+from django.core.paginator import Paginator
+
 # Create your views here.
 
 
@@ -58,3 +60,11 @@ def shop(request):
 
 def basket(request):
     return render(request, 'task1/basket.html')
+
+
+def show_news(request):
+    news = News.objects.all()
+    paginator = Paginator(news, 3)
+    page_number = request.GET.get('page')  # Номер текущей страницы
+    page_object = paginator.get_page(page_number)  # Посты текущей страницы
+    return render(request, 'task1/news.html', {'page_object': page_object})

@@ -4,12 +4,15 @@ body {
 }
 
 header {
-    background-color: #6b20fd;
-    color: #fff;
+    color: #d9d9d9;
     padding: 10px 20px;
     text-align: center;
     background-image: url('images/backg.jpeg');
     background-position: 50% 0%
+}
+
+h1 {
+    color: #d9d9d9
 }
 
 menu {
@@ -30,7 +33,8 @@ main {
     padding: 10px
 }
 
-h1 {
+h3 {
+    align: center;
     color: #d9d9d9;
 }
 
@@ -70,5 +74,5 @@ button {
     border-style: outset;
     border-width: medium;
     border-radius: 20px;
-    
+
 }
